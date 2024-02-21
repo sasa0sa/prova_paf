@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <link href="style.css" rel="stylesheet">
@@ -7,7 +7,6 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.1.2/dist/tailwind.min.css" rel="stylesheet">
     <title>App</title>
     <style>
-      /* Add this to your style.css file */
       .heart {
           position: fixed;
           width: 100px;
@@ -15,11 +14,11 @@
           background-color: #F0E5FF;
           transform: rotate(-45deg);
           filter: blur(8px);
-          z-index: -1; /* Coloca el corazón detrás de los demás elementos */
-          top: 50%; /* Centra verticalmente */
-          left: 50%; /* Centra horizontalmente */
-          margin-top: -50px; /* Mitad del alto del corazón */
-          margin-left: -50px; /* Mitad del ancho del corazón */
+          z-index: -1; 
+          top: 50%; 
+          left: 50%; 
+          margin-top: -50px; 
+          margin-left: -50px; 
       }
       .heart:before,
       .heart:after {
@@ -45,7 +44,7 @@
           top: 50%;
           left: 50%;
           transform: translate(-50%, -50%);
-          z-index: 1; /* Asegura que el texto esté encima del corazón */
+          z-index: 1; 
       }
   </style>
 </head>
@@ -53,29 +52,313 @@
 <div class="flex items-center justify-center h-screen overflow-hidden">
   <div class="heart"></div>
   <div class="text-container">
-    
-    <button class="px-6 mb-8 py-2 border text-white font-bold rounded-full transition-transform transform-gpu -translate-y-1 hover:-translate-y-0 shadow-lg" style="outline: none;">
+    <button id="clickButton" onclick="showImageAndRedirect()" class="px-6 mb-8 py-2 border text-white font-bold rounded-full transition-transform transform-gpu -translate-y-1 hover:-translate-y-0 shadow-lg" style="outline: none;">
       Click me!
     </button>
   </div>
+  <div id="image-container" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+    <img id="gifImage" src="https://i.pinimg.com/originals/1a/67/a6/1a67a6ce5f7e78b68cc1166993788b0e.gif" alt="Imagen" style="max-width: 100%; max-height: 100%;">
+  </div>
+  <script>
+    function showImageAndRedirect() {
+
+      document.getElementById("clickButton").style.display = "none";
+      document.getElementById("image-container").style.display = "block";
+      
+      var gifImage = document.getElementById("gifImage");
+      var gifUrl = "https://i.pinimg.com/originals/1a/67/a6/1a67a6ce5f7e78b68cc1166993788b0e.gif";
+      gifImage.src = gifUrl + "?a=" + new Date().getTime();
+
+      setTimeout(function() {
+        document.getElementById("clickButton").style.display = "block";
+        document.getElementById("image-container").style.display = "none";
+        window.location.href = "#segona-pag";
+      }, 2000); 
+    }
+  </script>
 </div>
 <script type="module" src="/main.js"></script>
-<div id="segona-pag" class="bg-white">
-  <div class="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
-      <div class="hidden sm:mb-8 sm:flex sm:justify-center">
-          <div class="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
-              Announcing our next round of funding. <a href="#" class="font-semibold text-indigo-600"><span class="absolute inset-0" aria-hidden="true"></span>Read more <span aria-hidden="true">&rarr;</span></a>
-          </div>
+<div id="segona-pag" class="relative flex min-h-screen flex-col justify-center overflow-hidden bg-slate-100 py-6 sm:py-12">
+  <div class="min-h-28 ">
+    <div class="max-w-screen-lg mx-auto py-4">
+      <h2 class="font-bold text-center text-6xl text-slate-700 font-display">
+        Fampianarana
+      </h2>
+      <p class="text-center mt-4 font-medium text-slate-500">- Miorena tsara -</p>
+
+      <div class="rounded-lg overflow-hidden mt-10 relative before:absolute before:z-20 before:bg-black before:h-full before:w-full before:bg-gradient-to-tr before:from-black before:to-emerald-600 before:opacity-80">
+        <img src="https://loremflickr.com/320/240?random=1" class="absolute z-10 object-cover h-80 w-full h-full" alt="">
+        <a href="" class="absolute z-20  top-1/2  right-20 text-white -translate-y-1/2">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-20 h-20">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15.91 11.672a.375.375 0 0 1 0 .656l-5.603 3.113a.375.375 0 0 1-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112Z" />
+          </svg>
+        </a>
+        <div class="relative z-20 p-10 h-full w-1/2">
+          <h2 class="text-white text-3xl font-semibold">ASA fitoriana ny filazantsara iarivo avaradrano</h2>
+          <h3 class="text-white text-xl">Docteur Irako Andriamahasoa Ammi</h3>
+          <p class="text-sm text-slate-200 mt-4">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga veritatis officiis cupiditate sed sint natus alias placeat, asperiores tempore reiciendis.
+          </p>
+          <div class="flex gap-4 items-center pt-4 border-t border-slate-300 text-slate-300 mt-6">
+              <span class="flex gap-1 items-center text-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                </svg>
+                35
+              </span>
+              <span class="flex gap-1 items-center text-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="text-sky-400 w-4 h-4">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+                </svg>
+
+                20
+              </span>
+              <span class="flex gap-1 items-center text-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 text-lime-500">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 0 1 .865-.501 48.172 48.172 0 0 0 3.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" />
+                </svg>
+
+
+                15
+              </span>
+            </div>
+        </div>
       </div>
-      <div class="text-center">
-          <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">Data to enrich your online business</h1>
-          <p class="mt-6 text-lg leading-8 text-gray-600">Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua.</p>
-          <div class="mt-10 flex items-center justify-center gap-x-6">
-              <a href="#" class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Get started</a>
-              <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Learn more <span aria-hidden="true">→</span></a>
+
+      <div class="flex gap-6 mt-6">
+        <div class="bg-white w-1/3 shadow rounded-lg overflow-hidden flex flex-col">
+          <img src="https://loremflickr.com/320/240?random=1" class="object-cover h-52 w-full" alt="">
+          <div class="p-6 flex flex-col flex-1">
+            <span class="block text-slate-400 font-semibold text-sm">16 Juillet 2016</span>
+            <h3 class="mt-3 mb-2 font-bold text-lg">
+              <a href="https://play.tailwindcss.com/TGny89rOkl?layout=horizontal">
+              Fiofanana FLM SPIA 19 11 Fevrier 2023</a></h3>
+              <h2 class="text-xs text-slate-400 mb-3">Docteur Irako Andriamahasoa Ammi</h2>
+            <div class="flex gap-4 items-center mt-auto pt-4 border-t border-slate-300">
+              <span class="flex gap-1 items-center text-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                </svg>
+                35
+              </span>
+              <span class="flex gap-1 items-center text-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="text-sky-400 w-4 h-4">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+                </svg>
+
+                20
+              </span>
+              <span class="flex gap-1 items-center text-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 text-lime-500">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 0 1 .865-.501 48.172 48.172 0 0 0 3.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" />
+                </svg>
+
+
+                15
+              </span>
+            </div>
           </div>
+        </div>
+
+        <div class="bg-white w-1/3 shadow rounded-lg overflow-hidden flex flex-col">
+          <img src="https://loremflickr.com/320/240?random=1" class="object-cover h-52 w-full" alt="">
+          <div class="p-6 flex flex-col flex-1">
+            <span class="block text-slate-400 font-semibold text-sm">16 Juillet 2016</span>
+            <h3 class="mt-3 mb-2 font-bold text-lg">
+              <a href="https://play.tailwindcss.com/TGny89rOkl?layout=horizontal">
+              Fiofanana FLM SPIA 19 11 Fevrier 2023</a></h3>
+              <h2 class="text-xs text-slate-400 mb-3">Docteur Irako Andriamahasoa Ammi</h2>
+            <div class="flex gap-4 items-center mt-auto pt-4 border-t border-slate-300">
+              <span class="flex gap-1 items-center text-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                </svg>
+                35
+              </span>
+              <span class="flex gap-1 items-center text-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="text-sky-400 w-4 h-4">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+                </svg>
+
+                20
+              </span>
+              <span class="flex gap-1 items-center text-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 text-lime-500">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 0 1 .865-.501 48.172 48.172 0 0 0 3.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" />
+                </svg>
+
+
+                15
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white w-1/3 shadow rounded-lg overflow-hidden flex flex-col">
+          <img src="https://loremflickr.com/320/240?random=1" class="object-cover h-52 w-full" alt="">
+          <div class="p-6 flex flex-col flex-1">
+            <span class="block text-slate-400 font-semibold text-sm">16 Juillet 2016</span>
+            <h3 class="mt-3 mb-2 font-bold text-lg">
+              <a href="https://play.tailwindcss.com/TGny89rOkl?layout=horizontal">
+              Fiofanana FLM SPIA 19 11 Fevrier 2023</a></h3>
+              <h2 class="text-xs text-slate-400 mb-3">Docteur Irako Andriamahasoa Ammi</h2>
+            <div class="flex gap-4 items-center mt-auto pt-4 border-t border-slate-300">
+              <span class="flex gap-1 items-center text-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                </svg>
+                35
+              </span>
+              <span class="flex gap-1 items-center text-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="text-sky-400 w-4 h-4">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+                </svg>
+
+                20
+              </span>
+              <span class="flex gap-1 items-center text-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 text-lime-500">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 0 1 .865-.501 48.172 48.172 0 0 0 3.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" />
+                </svg>
+
+
+                15
+              </span>
+            </div>
+          </div>
+        </div>
+
       </div>
+    </div>
   </div>
 </div>
+<!-- component -->
+<div class="p-24 flex flex-wrap items-center justify-center">
+    
+  <div class="flex-shrink-0 m-6 relative overflow-hidden bg-orange-500 rounded-lg max-w-xs shadow-lg">
+    <svg class="absolute bottom-0 left-0 mb-8" viewBox="0 0 375 283" fill="none" style="transform: scale(1.5); opacity: 0.1;">
+      <rect x="159.52" y="175" width="152" height="152" rx="8" transform="rotate(-45 159.52 175)" fill="white"/>
+      <rect y="107.48" width="152" height="152" rx="8" transform="rotate(-45 0 107.48)" fill="white"/>
+    </svg>
+    <div class="relative pt-10 px-10 flex items-center justify-center">
+      <div class="block absolute w-48 h-48 bottom-0 left-0 -mb-24 ml-3" style="background: radial-gradient(black, transparent 60%); transform: rotate3d(0, 0, 1, 20deg) scale3d(1, 0.6, 1); opacity: 0.2;"></div>
+      <img class="relative w-40" src="https://user-images.githubusercontent.com/2805249/64069899-8bdaa180-cc97-11e9-9b19-1a9e1a254c18.png" alt="">
+    </div>
+    <div class="relative text-white px-6 pb-6 mt-6">
+      <span class="block opacity-75 -mb-1">Indoor</span>
+      <div class="flex justify-between">
+        <span class="block font-semibold text-xl">Peace Lily</span>
+        <span class="block bg-white rounded-full text-orange-500 text-xs font-bold px-3 py-2 leading-none flex items-center">$36.00</span>
+      </div>
+    </div>
+  </div>
+  <div class="flex-shrink-0 m-6 relative overflow-hidden bg-teal-500 rounded-lg max-w-xs shadow-lg">
+    <svg class="absolute bottom-0 left-0 mb-8" viewBox="0 0 375 283" fill="none" style="transform: scale(1.5); opacity: 0.1;">
+      <rect x="159.52" y="175" width="152" height="152" rx="8" transform="rotate(-45 159.52 175)" fill="white"/>
+      <rect y="107.48" width="152" height="152" rx="8" transform="rotate(-45 0 107.48)" fill="white"/>
+    </svg>
+    <div class="relative pt-10 px-10 flex items-center justify-center">
+      <div class="block absolute w-48 h-48 bottom-0 left-0 -mb-24 ml-3" style="background: radial-gradient(black, transparent 60%); transform: rotate3d(0, 0, 1, 20deg) scale3d(1, 0.6, 1); opacity: 0.2;"></div>
+      <img class="relative w-40" src="https://user-images.githubusercontent.com/2805249/64069998-305de300-cc9a-11e9-8ae7-5a0fe00299f2.png" alt="">
+    </div>
+    <div class="relative text-white px-6 pb-6 mt-6">
+      <span class="block opacity-75 -mb-1">Outdoor</span>
+      <div class="flex justify-between">
+        <span class="block font-semibold text-xl">Monstera</span>
+        <span class="block bg-white rounded-full text-teal-500 text-xs font-bold px-3 py-2 leading-none flex items-center">$45.00</span>
+      </div>
+    </div>
+  </div>
+  <div class="flex-shrink-0 m-6 relative overflow-hidden bg-purple-500 rounded-lg max-w-xs shadow-lg">
+    <svg class="absolute bottom-0 left-0 mb-8" viewBox="0 0 375 283" fill="none" style="transform: scale(1.5); opacity: 0.1;">
+      <rect x="159.52" y="175" width="152" height="152" rx="8" transform="rotate(-45 159.52 175)" fill="white"/>
+      <rect y="107.48" width="152" height="152" rx="8" transform="rotate(-45 0 107.48)" fill="white"/>
+    </svg>
+    <div class="relative pt-10 px-10 flex items-center justify-center">
+      <div class="block absolute w-48 h-48 bottom-0 left-0 -mb-24 ml-3" style="background: radial-gradient(black, transparent 60%); transform: rotate3d(0, 0, 1, 20deg) scale3d(1, 0.6, 1); opacity: 0.2;"></div>
+      <img class="relative w-40" src="https://user-images.githubusercontent.com/2805249/64069899-8bdaa180-cc97-11e9-9b19-1a9e1a254c18.png" alt="">
+    </div>
+    <div class="relative text-white px-6 pb-6 mt-6">
+      <span class="block opacity-75 -mb-1">Outdoor</span>
+      <div class="flex justify-between">
+        <span class="block font-semibold text-xl">Oak Tree</span>
+        <span class="block bg-white rounded-full text-purple-500 text-xs font-bold px-3 py-2 leading-none flex items-center">$68.50</span>
+      </div>
+    </div>
+  </div>
+  <!-- component -->
+<div class="da relative flex min-h-screen flex-col justify-center overflow-hidden">
+  <div class="absolute inset-0 bg-center dark:bg-black"></div>
+  <div class="group relative m-0 flex h-72 w-96 rounded-xl shadow-xl ring-gray-900/5 sm:mx-auto sm:max-w-lg">
+    <div class="z-10 h-full w-full overflow-hidden rounded-xl border border-gray-200 opacity-80 transition duration-300 ease-in-out group-hover:opacity-100 dark:border-gray-700 dark:opacity-70">
+      <img src="https://images.unsplash.com/photo-1506187334569-7596f62cf93f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3149&q=80" class="animate-fade-in block h-full w-full scale-100 transform object-cover object-center opacity-100 transition duration-300 group-hover:scale-110" alt="" />
+    </div>
+    <div class="absolute bottom-0 z-20 m-0 pb-4 ps-4 transition duration-300 ease-in-out group-hover:-translate-y-1 group-hover:translate-x-3 group-hover:scale-110">
+      <h1 class="font-serif text-2xl font-bold text-white shadow-xl">Azores</h1>
+      <h1 class="text-sm font-light text-gray-200 shadow-xl">A Little Paradise in Portugal</h1>
+    </div>
+  </div>
+</div>
+</div>
+<!-- component -->
+<link href="https://fonts.googleapis.com/css2?family=Patrick+Hand:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+<style>
+  * {
+    font-family: 'Patrick Hand';
+  }
+</style>
+
+<div class="flex items-center justify-center min-h-screen min-w-screen">
+  <!-- copy element start in here -->
+  <div class="relative min-w-[400px] max-w-[400px] min-h-[500px] max-h-[500px] border border-black bg-gray-100 drop-shadow-2xl">
+    <div class="absolute flex flex-col w-full space-y-5 py-8">
+      <hr class="border-zinc-400 mx-2">
+      <hr class="border-zinc-400 mx-2">
+      <hr class="border-zinc-400 mx-2">
+      <hr class="border-zinc-400 mx-2">
+      <hr class="border-zinc-400 mx-2">
+      <hr class="border-zinc-400 mx-2">
+      <hr class="border-zinc-400 mx-2">
+      <hr class="border-zinc-400 mx-2">
+      <hr class="border-zinc-400 mx-2">
+      <hr class="border-zinc-400 mx-2">
+      <hr class="border-zinc-400 mx-2">
+      <hr class="border-zinc-400 mx-2">
+      <hr class="border-zinc-400 mx-2">
+      <hr class="border-zinc-400 mx-2">
+      <hr class="border-zinc-400 mx-2">
+      <hr class="border-zinc-400 mx-2">
+      <hr class="border-zinc-400 mx-2">
+      <hr class="border-zinc-400 mx-2">
+      <hr class="border-zinc-400 mx-2">
+      <hr class="border-zinc-400 mx-2">
+      <hr class="border-zinc-400 mx-2">
+      <hr class="border-zinc-400 mx-2">
+    </div>
+    <!-- isi teks mulai dari sini -->
+    <h1 class="absolute top-2 text-[18px] font-bold tracking-wider inset-x-0 text-center">Belajar Javascript</h1>
+    <p class="absolute top-[54px] left-2 max-w-[380px] leading-[20.8px] break-all whitespace-break-spaces">Oke hari ini kita akan belajar javascript bersama saya zaadevofc (kejaa). A-aa-a anjayy.
+        
+        Pada pembelajaran kali ini saya akan memberi tau 
+        bagaimana cara menembak cewek dengan menggunakan 
+        javascript.
+        
+        Tapi kapan - kapan aja.
+        
+        Follow github : <span class="text-blue-500">https://github.com/zaadevofc</span>
+        My Portfolio : <span class="text-blue-500">https://zaadevofc.tech</span>
+    </p>
+    <!-- isi teks akhir sampai sini -->
+    <h1 class="absolute bottom-0 right-2 p-1 font-mono text-xs font-bold">zadper</h1>
+  </div>
+  <!-- copy element stop in here -->
+</div>
+<!-- See my profile for more components ~ -->
 </body>
 </html>
