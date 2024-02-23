@@ -2,7 +2,11 @@
 export default {
   content: ["./**/*.{html,js}"],
   theme: {
-    extend: {},
+    extend: {
+      inset: {
+        '34': '139px',
+      },
+    },
   },
   plugins: [],
 }

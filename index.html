@@ -52,7 +52,8 @@
 <div class="flex items-center justify-center h-screen overflow-hidden">
   <div class="heart"></div>
   <div class="text-container">
-    <button id="clickButton" onclick="showImageAndRedirect()" class="px-6 mb-8 py-2 border text-white font-bold rounded-full transition-transform transform-gpu -translate-y-1 hover:-translate-y-0 shadow-lg" style="outline: none;">
+    <button id="clickButton" onclick="showImageAndRedirect()" class="px-6 mb-8 py-2 border text-white font-bold rounded-full 
+    transition-transform transform-gpu -translate-y-1 hover:-translate-y-0 shadow-lg" style="outline: none;">
       Click me!
     </button>
   </div>
@@ -78,164 +79,294 @@
   </script>
 </div>
 <script type="module" src="/main.js"></script>
-<div id="segona-pag" class="relative flex min-h-screen flex-col justify-center overflow-hidden bg-slate-100 py-6 sm:py-12">
-  <div class="min-h-28 ">
-    <div class="max-w-screen-lg mx-auto py-4">
-      <h2 class="font-bold text-center text-6xl text-slate-700 font-display">
-        Fampianarana
-      </h2>
-      <p class="text-center mt-4 font-medium text-slate-500">- Miorena tsara -</p>
+<div id="segona-pag" class="relative flex min-h-screen flex-col justify-center overflow-hidden bg-violet-100/40 py-6 sm:py-12">
+<!-- component -->
+<script defer src="https://unpkg.com/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
+<script src="//unpkg.com/alpinejs" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/perfect-scrollbar@1.5.5/dist/perfect-scrollbar.min.js"></script>
 
-      <div class="rounded-lg overflow-hidden mt-10 relative before:absolute before:z-20 before:bg-black before:h-full before:w-full before:bg-gradient-to-tr before:from-black before:to-emerald-600 before:opacity-80">
-        <img src="https://loremflickr.com/320/240?random=1" class="absolute z-10 object-cover h-80 w-full h-full" alt="">
-        <a href="" class="absolute z-20  top-1/2  right-20 text-white -translate-y-1/2">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-20 h-20">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-            <path stroke-linecap="round" stroke-linejoin="round" d="M15.91 11.672a.375.375 0 0 1 0 .656l-5.603 3.113a.375.375 0 0 1-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112Z" />
-          </svg>
-        </a>
-        <div class="relative z-20 p-10 h-full w-1/2">
-          <h2 class="text-white text-3xl font-semibold">ASA fitoriana ny filazantsara iarivo avaradrano</h2>
-          <h3 class="text-white text-xl">Docteur Irako Andriamahasoa Ammi</h3>
-          <p class="text-sm text-slate-200 mt-4">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga veritatis officiis cupiditate sed sint natus alias placeat, asperiores tempore reiciendis.
-          </p>
-          <div class="flex gap-4 items-center pt-4 border-t border-slate-300 text-slate-300 mt-6">
-              <span class="flex gap-1 items-center text-sm">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                </svg>
-                35
-              </span>
-              <span class="flex gap-1 items-center text-sm">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="text-sky-400 w-4 h-4">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
-                </svg>
-
-                20
-              </span>
-              <span class="flex gap-1 items-center text-sm">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 text-lime-500">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 0 1 .865-.501 48.172 48.172 0 0 0 3.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" />
-                </svg>
-
-
-                15
-              </span>
-            </div>
-        </div>
+<div
+  class="flex flex-col items-center justify-center min-h-screen antialiased"
+>
+  <div x-data="tabs" class="overflow-hidden rounded-2xl" x-cloak>
+    <!-- Tabs -->
+    <div
+         x-show="isTabsActive"
+         x-collapse
+         class="bg-white rounded-t-2xl mb-2"
+    >
+      <div id="tabs-container" class="relative h-64 overflow-hidden">
+        <ul class="p-6">
+          <template x-for="(tab, index) in tabs" x-key="index">
+            <li x-show="activeTab == tab.title" class="space-y-4 text-center">
+              <h2
+                  x-text="(new String(tab.title)).replace(/\w\S*/g, (w) => (w.replace(/^\w/, (c) => c.toUpperCase())))"
+                  class="text-3xl text-gray-700"
+                  ></h2>
+              <p
+                 class="max-w-md text-base text-gray-500"
+                 x-text="tab.content"
+                 ></p>
+            </li>
+          </template>
+        </ul>
       </div>
+    </div>
 
-      <div class="flex gap-6 mt-6">
-        <div class="bg-white w-1/3 shadow rounded-lg overflow-hidden flex flex-col">
-          <img src="https://loremflickr.com/320/240?random=1" class="object-cover h-52 w-full" alt="">
-          <div class="p-6 flex flex-col flex-1">
-            <span class="block text-slate-400 font-semibold text-sm">16 Juillet 2016</span>
-            <h3 class="mt-3 mb-2 font-bold text-lg">
-              <a href="https://play.tailwindcss.com/TGny89rOkl?layout=horizontal">
-              Fiofanana FLM SPIA 19 11 Fevrier 2023</a></h3>
-              <h2 class="text-xs text-slate-400 mb-3">Docteur Irako Andriamahasoa Ammi</h2>
-            <div class="flex gap-4 items-center mt-auto pt-4 border-t border-slate-300">
-              <span class="flex gap-1 items-center text-sm">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                </svg>
-                35
-              </span>
-              <span class="flex gap-1 items-center text-sm">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="text-sky-400 w-4 h-4">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
-                </svg>
+    <div
+      class="relative flex-center items-center overflow-hidden bg-white border-0.5 border-purple-500 rounded-b-2xl "
+    >
+      <!-- Links -->
+      <nav class="flex items-center justify-center h-20 gap-8 px-6 ">
+        <template x-for="(link, index) in links" x-key="index">
+          <a
+             href="#"
+             @click="setActiveTab($event, link.title, index)"
+             class="grid w-16 h-16 grid-cols-1 grid-rows-1 "
+             >
+            <span class="sr-only" x-text="link.title"></span>
+            <div
+                 class="col-[1/1] row-[1/1] flex items-center justify-center w-16 h-16 transition-opacity duration-300"
+                 :class="activeTab != link.title ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'"
+                 x-html="link.inActiveIcon"
+                 ></div>
+            <div
+                 class="col-[1/1] row-[1/1] flex items-center justify-center w-16 h-16 transition-opacity duration-300"
+                 :class="activeTab == link.title ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'"
+                 x-html="link.activeIcon"
+                 ></div>
+          </a>
+        </template>
+      </nav>
 
-                20
-              </span>
-              <span class="flex gap-1 items-center text-sm">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 text-lime-500">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 0 1 .865-.501 48.172 48.172 0 0 0 3.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" />
-                </svg>
+      <!-- Show/Hide button -->
+      <button
+              @click="isTabsActive = !isTabsActive"
+              class="absolute z-10 flex items-center justify-center gap-2 transition-all bg-purple-200" style="outline: none;"
+              :class="isTabsActive ? 'left-0 top-0 w-8 h-8 rounded-br-lg' : 'w-full h-full inset-0'"
+              >
+        <svg
+             x-show="!isTabsActive"
+             class="w-6 h-6 text-white animate-pulse"
+             fill="none"
+             stroke="currentColor"
+             viewBox="0 0 24 24"
+             xmlns="http://www.w3.org/2000/svg"
+             >
+          <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                ></path>
+          <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                ></path>
+        </svg>
 
+        <svg
+             x-show="isTabsActive"
+             class="w-6 h-6 text-white "
+             fill="none"
+             stroke="currentColor"
+             viewBox="0 0 24 24"
+             xmlns="http://www.w3.org/2000/svg"
+             >
+          <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"
+                ></path>
+        </svg>
 
-                15
-              </span>
-            </div>
-          </div>
-        </div>
+        <span x-show="!isTabsActive" class="text-white">Notita</span>
+      </button>
 
-        <div class="bg-white w-1/3 shadow rounded-lg overflow-hidden flex flex-col">
-          <img src="https://loremflickr.com/320/240?random=1" class="object-cover h-52 w-full" alt="">
-          <div class="p-6 flex flex-col flex-1">
-            <span class="block text-slate-400 font-semibold text-sm">16 Juillet 2016</span>
-            <h3 class="mt-3 mb-2 font-bold text-lg">
-              <a href="https://play.tailwindcss.com/TGny89rOkl?layout=horizontal">
-              Fiofanana FLM SPIA 19 11 Fevrier 2023</a></h3>
-              <h2 class="text-xs text-slate-400 mb-3">Docteur Irako Andriamahasoa Ammi</h2>
-            <div class="flex gap-4 items-center mt-auto pt-4 border-t border-slate-300">
-              <span class="flex gap-1 items-center text-sm">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                </svg>
-                35
-              </span>
-              <span class="flex gap-1 items-center text-sm">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="text-sky-400 w-4 h-4">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
-                </svg>
-
-                20
-              </span>
-              <span class="flex gap-1 items-center text-sm">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 text-lime-500">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 0 1 .865-.501 48.172 48.172 0 0 0 3.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" />
-                </svg>
-
-
-                15
-              </span>
-            </div>
-          </div>
-        </div>
-
-        <div class="bg-white w-1/3 shadow rounded-lg overflow-hidden flex flex-col">
-          <img src="https://loremflickr.com/320/240?random=1" class="object-cover h-52 w-full" alt="">
-          <div class="p-6 flex flex-col flex-1">
-            <span class="block text-slate-400 font-semibold text-sm">16 Juillet 2016</span>
-            <h3 class="mt-3 mb-2 font-bold text-lg">
-              <a href="https://play.tailwindcss.com/TGny89rOkl?layout=horizontal">
-              Fiofanana FLM SPIA 19 11 Fevrier 2023</a></h3>
-              <h2 class="text-xs text-slate-400 mb-3">Docteur Irako Andriamahasoa Ammi</h2>
-            <div class="flex gap-4 items-center mt-auto pt-4 border-t border-slate-300">
-              <span class="flex gap-1 items-center text-sm">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                </svg>
-                35
-              </span>
-              <span class="flex gap-1 items-center text-sm">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="text-sky-400 w-4 h-4">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
-                </svg>
-
-                20
-              </span>
-              <span class="flex gap-1 items-center text-sm">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 text-lime-500">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 0 1 .865-.501 48.172 48.172 0 0 0 3.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" />
-                </svg>
-
-
-                15
-              </span>
-            </div>
-          </div>
-        </div>
-
+      <!-- Indicator -->
+      <div
+           id="indicator"
+           class="absolute w-6 h-8 transition-all duration-300 bg-purple-500 rounded-full -bottom-4 left-34 "
+           >
+        <div
+             style="box-shadow: 0 10px 0 rgb(168 85 247)"
+             class="absolute w-5 h-5 bg-white -left-4 bottom-1/2 rounded-br-3xl"
+             ></div>
+        <div
+             style="box-shadow: 0 10px 0 rgb(168 85 247)"
+             class="absolute w-5 h-5 bg-white -right-4 bottom-1/2 rounded-bl-3xl"
+             ></div>
       </div>
     </div>
   </div>
+</div>
+
+
+<script>
+const tabs = () => {
+  let ps;
+  const init = () => {
+    const tabsContainer = document.querySelector("#tabs-container");
+    ps = new PerfectScrollbar(tabsContainer);
+  };
+
+  return {
+    init,
+
+    isTabsActive: false,
+
+    activeTab: "templates",
+
+    links: [
+      {
+        title: "templates",
+        inActiveIcon: `
+              <svg
+                aria-hidden="true"
+                class="w-8 h-8 text-purple-500"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path 
+                  stroke-linecap="round" 
+                  stroke-linejoin="round" 
+                  stroke-width="2" 
+                  d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"
+                ></path>
+              </svg>
+              `,
+        activeIcon: `
+              <svg
+                aria-hidden="true"
+                class="w-8 h-8 text-purple-500"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path 
+                  d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"
+                ></path>
+              </svg>
+              `,
+      },
+      {
+        title: "cloud",
+        inActiveIcon: `
+              <svg
+                aria-hidden="true"
+                class="w-8 h-8 text-purple-500"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path 
+                  stroke-linecap="round" 
+                  stroke-linejoin="round" 
+                  stroke-width="2" 
+                  d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"
+                ></path>
+              </svg>
+              `,
+        activeIcon: `
+              <svg
+                aria-hidden="true"
+                class="w-8 h-8 text-purple-500"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+              <path 
+                d="M5.5 16a3.5 3.5 0 01-.369-6.98 4 4 0 117.753-1.977A4.5 4.5 0 1113.5 16h-8z"
+              ></path>
+              </svg>
+              `,
+      },
+      {
+        title: "security",
+        inActiveIcon: `
+              <svg
+                aria-hidden="true"
+                class="w-8 h-8 text-purple-500"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path 
+                  stroke-linecap="round" 
+                  stroke-linejoin="round" stroke-width="2" 
+                  d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                ></path>
+              </svg>
+              `,
+        activeIcon: `
+              <svg
+                aria-hidden="true"
+                class="w-8 h-8 text-purple-500"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path 
+                  fill-rule="evenodd" 
+                  d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"
+                ></path>
+              </svg>
+              `,
+      },
+    ],
+
+    tabs: [
+      {
+        title: "templates",
+        content:
+        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod hic autem, cumque nobis in a, quam temporibus est et iure ullam tenetur ut. Officia explicabo atque beatae. Illum, eum quo? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod hic autem, cumque nobis in a, quam temporibus est et iure ullam tenetur ut. Officia explicabo atque beatae. Illum, eum quo? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod hic autem, cumque nobis in a, quam temporibus est et iure ullam tenetur ut. Officia explicabo atque beatae. Illum, eum quo? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod hic autem, cumque nobis in a, quam temporibus est et iure ullam tenetur ut. Officia explicabo atque beatae. Illum, eum quo? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod hic autem, cumque nobis in a, quam temporibus est et iure ullam tenetur ut. Officia explicabo atque beatae. Illum, eum quo? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod hic autem, cumque nobis in a, quam temporibus est et iure ullam tenetur ut. Officia explicabo atque beatae. Illum, eum quo? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod hic autem, cumque nobis in a, quam temporibus est et iure ullam tenetur ut. Officia explicabo atque beatae. Illum, eum quo? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod hic autem, cumque nobis in a, quam temporibus est et iure ullam tenetur ut. Officia explicabo atque beatae. Illum, eum quo? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod hic autem, cumque nobis in a, quam temporibus est et iure ullam tenetur ut. Officia explicabo atque beatae. Illum, eum quo? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod hic autem, cumque nobis in a, quam temporibus est et iure ullam tenetur ut. Officia explicabo atque beatae. Illum, eum quo? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod hic autem, cumque nobis in a, quam temporibus est et iure ullam tenetur ut. Officia explicabo atque beatae. Illum, eum quo? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod hic autem, cumque nobis in a, quam temporibus est et iure ullam tenetur ut. Officia explicabo atque beatae. Illum, eum quo? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod hic autem, cumque nobis in a, quam temporibus est et iure ullam tenetur ut. Officia explicabo atque beatae. Illum, eum quo? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod hic autem, cumque nobis in a, quam temporibus est et iure ullam tenetur ut. Officia explicabo atque beatae. Illum, eum quo? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod hic autem, cumque nobis in a, quam temporibus est et iure ullam tenetur ut. Officia explicabo atque beatae. Illum, eum quo? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod hic autem, cumque nobis in a, quam temporibus est et iure ullam tenetur ut. Officia explicabo atque beatae. Illum, eum quo? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod hic autem, cumque nobis in a, quam temporibus est et iure ullam tenetur ut. Officia explicabo atque beatae. Illum, eum quo? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod hic autem, cumque nobis in a, quam temporibus est et iure ullam tenetur ut. Officia explicabo atque beatae. Illum, eum quo? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod hic autem, cumque nobis in a, quam temporibus est et iure ullam tenetur ut. Officia explicabo atque beatae. Illum, eum quo? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod hic autem, cumque nobis in a, quam temporibus est et iure ullam tenetur ut. Officia explicabo atque beatae. Illum, eum quo? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod hic autem, cumque nobis in a, quam temporibus est et iure ullam tenetur ut. Officia explicabo atque beatae. Illum, eum quo? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod hic autem, cumque nobis in a, quam temporibus est et iure ullam tenetur ut. Officia explicabo atque beatae. Illum, eum quo? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod hic autem, cumque nobis in a, quam temporibus est et iure ullam tenetur ut. Officia explicabo atque beatae. Illum, eum quo? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod hic autem, cumque nobis in a, quam temporibus est et iure ullam tenetur ut. Officia explicabo atque beatae. Illum, eum quo? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod hic autem, cumque nobis in a, quam temporibus est et iure ullam tenetur ut. Officia explicabo atque beatae. Illum, eum quo? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod hic autem, cumque nobis in a, quam temporibus est et iure ullam tenetur ut. Officia explicabo atque beatae. Illum, eum quo? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod hic autem, cumque nobis in a, quam temporibus est et iure ullam tenetur ut. Officia explicabo atque beatae. Illum, eum quo? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod hic autem, cumque nobis in a, quam temporibus est et iure ullam tenetur ut. Officia explicabo atque beatae. Illum, eum quo? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod hic autem, cumque nobis in a, quam temporibus est et iure ullam tenetur ut. Officia explicabo atque beatae. Illum, eum quo? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod hic autem, cumque nobis in a, quam temporibus est et iure ullam tenetur ut. Officia explicabo atque beatae. Illum, eum quo?",
+      },
+      {
+        title: "cloud",
+        content:
+        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat fuga enim laborum corrupti commodi sapiente iste dolore non repellat? Odio sequi facilis blanditiis. Cupiditate quae accusantium consequatur sit! Harum, perferendis.",
+      },
+      {
+        title: "security",
+        content:
+        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat fuga enim laborum corrupti commodi sapiente iste dolore non repellat? Odio sequi facilis blanditiis. Cupiditate quae accusantium consequatur sit! Harum, perferendis. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat fuga enim laborum corrupti commodi sapiente iste dolore non repellat? Odio sequi facilis blanditiis. Cupiditate quae accusantium consequatur sit! Harum, perferendis.",
+      },
+      {
+        title: "support",
+        content:
+        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat fuga enim laborum corrupti commodi sapiente iste dolore non repellat? Odio sequi facilis blanditiis. Cupiditate quae accusantium consequatur sit! Harum, perferendis. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat fuga enim laborum corrupti commodi sapiente iste dolore non repellat? Odio sequi facilis blanditiis. Cupiditate quae accusantium consequatur sit! Harum, perferendis. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat fuga enim laborum corrupti commodi sapiente iste dolore non repellat? Odio sequi facilis blanditiis. Cupiditate quae accusantium consequatur sit! Harum, perferendis.",
+      },
+      {
+        title: "settings",
+        content:
+        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat fuga enim laborum corrupti commodi sapiente iste dolore non repellat? Odio sequi facilis blanditiis. Cupiditate quae accusantium consequatur sit! Harum, perferendis.",
+      },
+    ],
+
+    setActiveTab(e, link, index) {
+      e.preventDefault();
+
+      this.activeTab = link;
+
+      if (ps) {
+        ps.update();
+      }
+
+      document.querySelector(
+        "#indicator"
+        /* TODO: use link (width / 2 ) */
+      ).style.transform = `translateX(calc(${96 * index}px))`;
+    },
+  };
+};  
+</script>
 </div>
 <!-- component -->
 <div class="p-24 flex flex-wrap items-center justify-center">
