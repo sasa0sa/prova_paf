@@ -400,41 +400,70 @@ const tabs = () => {
             <a class="mt-6 text-sm leading-8 text-gray-600 tracking-wide">little red purring hood</a>
           </div>
         </div>
-
       </div>
     </div>
 </div>
 </div>
+
 <div class="my-8 mx-auto max-w-4xl">
   <div class="flex rounded-xl items-center flex-col bg-gray-300/10 shadow-lg ring-1 ring-inset ring-gray-900/10 lg:rounded-2xl pt-6 pb-8 gap-12 px-24">
       <div id="image-container">
-        <img src="https://i.pinimg.com/564x/d6/27/54/d627547b7265a66c095e640555f86984.jpg" alt="App screenshot" width="auto" height="auto" class="rounded-lg">
+        <img id="current-image" src="https://i.pinimg.com/564x/d6/27/54/d627547b7265a66c095e640555f86984.jpg" alt="App screenshot" width="500" height="100" class="rounded-lg">
       </div>
       <div>
-          <button id="next-btn" class="border px-6 py-2 rounded-md" style="outline: none;">Sig</button>
-      </div>
+  <button id="next-btn"
+    class="middle none relative h-10 max-h-[40px] w-10 max-w-[40px] rounded-lg bg-pink-500 text-center font-sans text-xs font-medium uppercase text-white shadow-lg shadow-pink-500/70 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+    type="button"
+    data-ripple-light="true"
+    style="outline: none;"
+  >
+    <span class="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 transform">
+      <i class="fas fa-heart text-lg leading-none" aria-hidden="true"></i>
+    </span>
+  </button>
+</div>
+
+<!-- stylesheet -->
+
+<!-- Font Awesome Link -->
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+  integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+  crossorigin="anonymous"
+/>
+
+<script src="https://unpkg.com/@material-tailwind/html@latest/scripts/ripple.js"></script>
+        </div>
   </div>
 </div>  
+  
 
 <script>
-    const images = [
-        "https://i.pinimg.com/564x/d6/27/54/d627547b7265a66c095e640555f86984.jpg",
-        "https://hospitalveterinariodonostia.com/wp-content/uploads/2022/02/Personalidad-gatos.png",
-        "https://static.eldiario.es/clip/ab74aa95-3656-424c-8ca1-dce590aabb97_16-9-discover-aspect-ratio_default_0.jpg",
-    ];
+  document.addEventListener('DOMContentLoaded', function() {
+      const images = [
+          "https://i.pinimg.com/564x/d6/27/54/d627547b7265a66c095e640555f86984.jpg",
+          "https://hospitalveterinariodonostia.com/wp-content/uploads/2022/02/Personalidad-gatos.png",
+          "https://static.eldiario.es/clip/ab74aa95-3656-424c-8ca1-dce590aabb97_16-9-discover-aspect-ratio_default_0.jpg",
+      ];
 
-    let currentIndex = -1; // Inicializamos en -1 para que la primera imagen se muestre correctamente
-    const imageContainer = document.getElementById('image-container');
-    const nextButton = document.getElementById('next-btn');
+      let currentIndex = 0; 
+      const imageContainer = document.getElementById('image-container');
+      const imageElement = document.getElementById('current-image');
+      const nextButton = document.getElementById('next-btn');
 
-    function changeImage() {
+      function changeImage() {
         currentIndex = (currentIndex + 1) % images.length;
         const imageUrl = images[currentIndex];
-        imageContainer.innerHTML = `<img src="${imageUrl}" alt="App screenshot" width="auto" height="auto" class="rounded-lg">`;
-    }
+        imageElement.src = imageUrl;
+        document.getElementById('current-image-url').innerText = imageUrl; // Actualizar el texto con la URL de la imagen actual
+      }
 
-    nextButton.addEventListener('click', changeImage);
+      nextButton.addEventListener('click', changeImage);
+  });
 </script>
+
+
 
 </body>
 </html>
